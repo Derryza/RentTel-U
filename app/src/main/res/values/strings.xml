@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Rent Tel-U</string>
+    <string name="nama">Nama</string>
+    <string name="no_hp">No. HP</string>
+    <string name="email">Email</string>
+    <string name="daftar">DAFTAR</string>
+    <string name="logo">logo</string>
+    <string name="masuk">MASUK</string>
+    <string name="daftar1">DAFTAR</string>
+
+</resources>

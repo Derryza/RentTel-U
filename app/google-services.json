@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "911056375737",
+    "firebase_url": "https://rent-tel-u.firebaseio.com",
+    "project_id": "rent-tel-u",
+    "storage_bucket": "rent-tel-u.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911056375737:android:c76db468dec89341",
+        "android_client_info": {
+          "package_name": "com.tubes.me.renttel_u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911056375737-31eca0mqgf63j51kc83go80rj6jkcv7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tubes.me.renttel_u",
+            "certificate_hash": "0F4EE1C06C12DD52195C4461CCB5DAB42CF015C1"
+          }
+        },
+        {
+          "client_id": "911056375737-d37g840016h1fb479rnsq3bfqnu08sv2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "911056375737-ldbh7edvr1t4fnnfbp2us3gleeabt8p5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6pm5hUg0FIhJ3UIgE9GrQFLaRZPicHFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911056375737-d37g840016h1fb479rnsq3bfqnu08sv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
