@@ -25,6 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class MainActivity extends AppCompatActivity {
 
 
+    //inisialisasi button
     private SignInButton signInButton;
 
     private static final int RC_SIGN_IN = 1;
