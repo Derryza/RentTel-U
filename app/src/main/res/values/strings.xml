@@ -7,5 +7,11 @@
     <string name="logo">logo</string>
     <string name="masuk">MASUK</string>
     <string name="daftar1">DAFTAR</string>
+    <string name="title_activity_drawer">Rent Tel-U</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>
