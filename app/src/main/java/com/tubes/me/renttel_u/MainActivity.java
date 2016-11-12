@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -25,6 +27,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class MainActivity extends AppCompatActivity {
 
 
+   /* private TextView textViewName;
+    private TextView textViewEmail;*/
+
+    private ProgressBar mProgress;
     //inisialisasi button
     private SignInButton signInButton;
 
@@ -42,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        /*//Initializing Views
+        textViewName = (TextView) findViewById(R.id.textviewnama);
+        textViewEmail = (TextView) findViewById(R.id.textView);*/
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -56,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
 
         // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions
+                .DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
@@ -77,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+
     }
 
     @Override
@@ -89,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
 
     @Override
@@ -102,9 +117,16 @@ public class MainActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+
+               /* GoogleSignInAccount acct = result.getSignInAccount();
+
+                //Displaying name and email
+                textViewName.setText(acct.getDisplayName());
+                textViewEmail.setText(acct.getEmail());*/
+
             } else {
-                // Google Sign In failed, update UI appropriately
-                // ...
+                //If login fails
+                Toast.makeText(this, "Gagal Masuk", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -129,5 +151,19 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed(); // this line close the  app on backpress
+    }
+
+    protected void onStop() {
+        super.onStop();
+
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+
     }
 }

@@ -20,8 +20,7 @@
             android:title="Tools" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
+    <item>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
@@ -30,7 +29,6 @@
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_reply_black_24dp"
                 android:title="Log Out" />
-        </menu>
     </item>
 
 </menu>

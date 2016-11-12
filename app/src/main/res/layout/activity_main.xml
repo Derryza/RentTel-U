@@ -18,7 +18,15 @@
         android:layout_marginBottom="50dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/ic_directions_bike_black_24dp"
-        android:contentDescription="@string/logo" />
+        android:contentDescription="@string/logo"
+        android:id="@+id/imageView2" />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:indeterminate="true"
+        android:visibility="gone"/>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
@@ -27,17 +35,17 @@
         android:layout_marginTop="30dp"
         android:layout_gravity="center" />
 
-   <!-- <Button
-        android:id="@+id/btnMasuk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/masuk"/>
+    <!-- <Button
+         android:id="@+id/btnMasuk"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/masuk"/>
 
-    <Button
-        android:id="@+id/btnDaftar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/daftar1"/>
--->
+     <Button
+         android:id="@+id/btnDaftar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/daftar1"/>
+ -->
     
 </LinearLayout>
