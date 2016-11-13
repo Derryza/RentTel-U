@@ -98,7 +98,6 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         return true;
     }
 
-
     /*protected void onStop() {
         super.onStop();
 
