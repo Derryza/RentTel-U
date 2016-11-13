@@ -14,8 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +27,11 @@ import java.util.List;
 
 public class DrawerActivity extends AppCompatActivity implements NavigationView
         .OnNavigationItemSelectedListener {
+
+
+    private ListView lvList;
+    private ListAdapter adapter;
+    private List<Listnya> mListnyaList;
 
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
@@ -44,6 +51,32 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        lvList = (ListView)findViewById(R.id.listview);
+        mListnyaList = new ArrayList<>();
+
+        mListnyaList.add(new Listnya(1, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(2, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(3, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(4, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(5, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(6, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(7, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(8, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(9, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(10, "Motor Beat", "aby aby", 200));
+
+
+        adapter = new com.tubes.me.renttel_u.ListAdapter(getApplicationContext(), mListnyaList);
+        lvList.setAdapter(adapter);
+
+        lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "memilih list " + view.getTag(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 

@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/namamotor"
+        android:textColor="#252525"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nama Motor"
@@ -14,15 +15,17 @@
 
     <TextView
         android:id="@+id/namarental"
+        android:textColor="#252525"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nama Rental"
-        android:textSize="20dp"/>
+        android:textSize="15dp"/>
 
     <TextView
         android:id="@+id/harga"
+        android:textColor="#252525"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Harga"
-        android:textSize="20dp"/>
+        android:textSize="10dp"/>
 </LinearLayout>
