@@ -26,8 +26,6 @@ import java.util.List;
 public class DrawerActivity extends AppCompatActivity implements NavigationView
         .OnNavigationItemSelectedListener {
 
-
-
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
 
