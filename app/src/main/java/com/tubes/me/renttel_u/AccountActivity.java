@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AccountActivity extends AppCompatActivity {
 
-
     private Button mLogOutButton;
 
     private FirebaseAuth mAuth;
@@ -34,7 +33,6 @@ public class AccountActivity extends AppCompatActivity {
                     startActivity(new Intent(AccountActivity.this, MainActivity.class));
 
                 }
-
             }
         };
 

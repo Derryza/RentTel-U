@@ -1,11 +1,8 @@
 package com.tubes.me.renttel_u;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,10 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +32,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
 
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +50,33 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                if (firebaseAuth.getCurrentUser() == null){
+
+                    startActivity(new Intent(DrawerActivity.this, MainActivity.class));
+
+                }
+
+            }
+        };
+
         lvList = (ListView)findViewById(R.id.listview);
         mListnyaList = new ArrayList<>();
 
-        mListnyaList.add(new Listnya(1, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(2, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(3, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(4, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(5, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(6, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(7, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(8, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(9, "Motor Beat", "aby aby", 200));
-        mListnyaList.add(new Listnya(10, "Motor Beat", "aby aby", 200));
+        mListnyaList.add(new Listnya(1, "Honda Beat", "Abi Rental", 50000));
+        mListnyaList.add(new Listnya(2, "Honda Vario", "Roda 99 Rental", 50000));
+        mListnyaList.add(new Listnya(3, "Yamaha Mio", "Abi Rental", 50000));
+        mListnyaList.add(new Listnya(4, "Yamaha Xride", "Roda 99 Rental", 50000));
+        mListnyaList.add(new Listnya(5, "Honda Vario 125", "Apri Rental", 50000));
+        mListnyaList.add(new Listnya(6, "Honda CBR", "Cia Rental", 50000));
+        mListnyaList.add(new Listnya(7, "Yamaha Mio Vino", "Aris rental", 50000));
+        mListnyaList.add(new Listnya(8, "Suzuki Spin", "Rio Rental", 50000));
+        mListnyaList.add(new Listnya(9, "Yamaha Jupiter MX", "Roda 99 Rental", 50000));
+        mListnyaList.add(new Listnya(10, "Suzuki Satria FU", "Roda 99 Rental", 50000));
 
 
         adapter = new com.tubes.me.renttel_u.ListAdapter(getApplicationContext(), mListnyaList);
@@ -73,10 +85,10 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "memilih list " + view.getTag(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "memilih list " + view.getTag(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(DrawerActivity.this, Booking.class));
             }
         });
-
 
     }
 
@@ -136,12 +148,4 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /*protected void onStop() {
-        super.onStop();
-
-        if (mGoogleApiClient.isConnected()) {
-            mGoogleApiClient.disconnect();
-        }
-    }*/
 }
