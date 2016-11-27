@@ -11,6 +11,15 @@ public class Rental {
     private String alamat;
     private String hp;
 
+
+    public Rental(int id_rental, String nama, String email, String alamat, String hp) {
+        this.id_rental = id_rental;
+        this.nama = nama;
+        this.email = email;
+        this.alamat = alamat;
+        this.hp = hp;
+    }
+
     public Rental(){
 
     }

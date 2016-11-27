@@ -12,6 +12,14 @@ public class Motor {
     private String deskripsi;
 
 
+    public Motor(int id_motor, String nama_motor, int id_rental, double harga, String deskripsi) {
+        this.id_motor = id_motor;
+        this.nama_motor = nama_motor;
+        this.id_rental = id_rental;
+        this.harga = harga;
+        this.deskripsi = deskripsi;
+    }
+
     public Motor(){
 
     }

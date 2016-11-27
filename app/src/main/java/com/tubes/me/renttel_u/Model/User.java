@@ -11,16 +11,15 @@ public class User {
     private String alamat;
     private String hp;
 
-
-    public User(){
-
+    public User(int id_user, String nama, String email, String alamat, String hp) {
+        this.id_user = id_user;
+        this.nama = nama;
+        this.email = email;
+        this.alamat = alamat;
+        this.hp = hp;
     }
 
-    public User(String nama, String alamat, String email, String hp){
-        this.nama=nama;
-        this.alamat=alamat;
-        this.hp=hp;
-        this.email=email;
+    public User(){
 
     }
 

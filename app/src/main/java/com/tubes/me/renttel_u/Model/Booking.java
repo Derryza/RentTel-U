@@ -14,6 +14,13 @@ public class Booking {
     private Date tanggal_selesai;
 
 
+    public Booking(int id_user, int id_motor, int id_rental, Date tanggal_mulai, Date tanggal_selesai) {
+        this.id_user = id_user;
+        this.id_motor = id_motor;
+        this.id_rental = id_rental;
+        this.tanggal_mulai = tanggal_mulai;
+        this.tanggal_selesai = tanggal_selesai;
+    }
 
     public Booking(){
 

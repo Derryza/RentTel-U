@@ -75,5 +75,4 @@ public class BaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
 }
