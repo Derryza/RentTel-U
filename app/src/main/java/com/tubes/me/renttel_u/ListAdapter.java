@@ -47,7 +47,7 @@ public class ListAdapter extends BaseAdapter {
         tvnamamotor.setText(mListnyaList.get(position).getNamamotor());
         tvnamarental.setText(mListnyaList.get(position).getNamarental());
         /*tvharga.setText(String.valueOf(mListnyaList.get(position).getHarga()) + " Rp. ");*/
-        tvharga.setText(String.valueOf("Rp. " + mListnyaList.get(position).getHarga()));
+        tvharga.setText(String.valueOf("Rp." + mListnyaList.get(position).getHarga() + "/24 jam"));
 
         v.setTag(mListnyaList.get(position).getId());
 

@@ -6,18 +6,20 @@ package com.tubes.me.renttel_u.Model;
 
 public class Rental {
     private int id_rental;
+    private String password;
     private String nama;
     private String email;
     private String alamat;
     private String hp;
 
 
-    public Rental(int id_rental, String nama, String email, String alamat, String hp) {
+    public Rental(int id_rental, String nama, String email, String alamat, String hp, String password) {
         this.id_rental = id_rental;
         this.nama = nama;
         this.email = email;
         this.alamat = alamat;
         this.hp = hp;
+        this.password = password;
     }
 
     public Rental(){
@@ -65,4 +67,11 @@ public class Rental {
     }
 
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

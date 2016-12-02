@@ -45,10 +45,11 @@
             <TextView
                 android:id="@+id/harga"
                 android:layout_below="@+id/namarental"
-                android:textColor="#252525"
+                android:textColor="#B71C1C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Harga"
+                android:layout_alignParentRight="true"
                 android:textSize="15dp"/>
 
         </RelativeLayout>

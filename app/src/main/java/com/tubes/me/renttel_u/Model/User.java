@@ -6,6 +6,7 @@ package com.tubes.me.renttel_u.Model;
 
 public class User {
     private int id_user;
+    private String password;
     private String nama;
     private String email;
     private String alamat;
@@ -17,6 +18,7 @@ public class User {
         this.email = email;
         this.alamat = alamat;
         this.hp = hp;
+        this.setPassword(getPassword());
     }
 
     public User(){
@@ -61,5 +63,13 @@ public class User {
 
     public void setHp(String hp) {
         this.hp = hp;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

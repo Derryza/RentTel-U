@@ -23,6 +23,7 @@ public class Constant {
 
     // Table Rental - column nmaes
     public static final String KEY_ID_RENTAL = "id_rental";
+    public static final String KEY_PASSWORD = "password";
     public static final String KEY_NAMA_RENTAL = "nama_rental";
 
     // Table Motor - column nmaes
