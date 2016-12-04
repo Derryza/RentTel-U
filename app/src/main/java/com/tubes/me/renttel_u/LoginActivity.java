@@ -17,12 +17,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button buttonRegistrasi;
+    private Button buttonMasuk;
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private TextView textViewSignin;
+    private TextView textViewSignup;
 
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        progressDialog = new ProgressDialog(this);
+        setContentView(R.layout.activity_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() != null){
@@ -40,18 +38,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(getApplicationContext(), DrawerActivity.class));
         }
 
-        buttonRegistrasi = (Button) findViewById(R.id.buttonRegistrasi);
+        progressDialog = new ProgressDialog(this);
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        buttonMasuk = (Button) findViewById(R.id.buttonMasuk);
+        textViewSignup = (TextView) findViewById(R.id.textSignup);
 
-        textViewSignin = (TextView) findViewById(R.id.textSignin);
-
-        buttonRegistrasi.setOnClickListener(this);
-        textViewSignin.setOnClickListener(this);
+        buttonMasuk.setOnClickListener(this);
+        textViewSignup.setOnClickListener(this);
     }
 
-    private void registerUser(){
+    private void userLogin(){
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
@@ -64,32 +62,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        progressDialog.setMessage("Mendaftarkan Pengguna...");
+        progressDialog.setMessage("Masuk...");
         progressDialog.show();
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(), DrawerActivity.class));
-                        }else{
-                            Toast.makeText(MainActivity.this, "Daftar Gagal, Coba lagi !", Toast.LENGTH_SHORT).show();
-                        }
                         progressDialog.dismiss();
-
+                        if (task.isSuccessful()){
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), DrawerActivity.class));
+                        }
                     }
                 });
     }
 
     @Override
     public void onClick(View view) {
-        if (view == buttonRegistrasi){
-            registerUser();
+        if (view == buttonMasuk){
+            userLogin();
         }
-        if (view == textViewSignin){
-            startActivity(new Intent(this, LoginActivity.class));
-            // buat loginnya
+
+        if (view == textViewSignup){
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
         }
+
     }
 }
