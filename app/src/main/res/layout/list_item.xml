@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Motor"
-                android:textSize="20dp"/>
+                android:textSize="17dp"/>
 
             <TextView
                 android:layout_below="@+id/namamotor"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Rental"
-                android:textSize="15dp"/>
+                android:textSize="13dp"/>
 
             <TextView
                 android:id="@+id/harga"

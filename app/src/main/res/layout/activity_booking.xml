@@ -15,9 +15,75 @@
         android:src="@drawable/ic_directions_bike_black_24dp"
         android:id="@+id/imagemtr"
         android:layout_width="match_parent"
-        android:layout_height="270dp" />
+        android:layout_height="268dp" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/lihatmaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="LihatMaps"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:src="@drawable/ic_location_on_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:text="Lihat di Maps"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/telepon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="Telepon"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:src="@drawable/ic_call_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:text="Telepon"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/kirimpesan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="kirimpesan"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:src="@drawable/ic_email_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:text="Kirim Pesan"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fasilitas yang ditawarkan : "/>
@@ -28,11 +94,11 @@
         android:layout_height="150dp" />
 
     <Button
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BOOKING"
         android:id="@+id/bookingbtn"
-        android:onClick="booking"/>
+        android:onClick="booking"/>-->
 
 </LinearLayout>

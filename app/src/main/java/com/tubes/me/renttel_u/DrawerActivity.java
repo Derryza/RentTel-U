@@ -89,7 +89,6 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
                 startActivity(new Intent(DrawerActivity.this, Booking.class));
             }
         });
-
     }
 
     @Override
@@ -141,6 +140,18 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_logout) {
+            /*mAuth = FirebaseAuth.getInstance();
+            mAuthListener = new FirebaseAuth.AuthStateListener() {
+                @Override
+                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                    if (firebaseAuth.getCurrentUser() == null){
+
+                        startActivity(new Intent(DrawerActivity.this, MainActivity.class));
+                    }
+                }
+            };
+            mAuth.signOut();*/
             startActivity(new Intent(DrawerActivity.this, AccountActivity.class));
         }
 

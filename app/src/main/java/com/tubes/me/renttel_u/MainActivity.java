@@ -1,5 +1,6 @@
 package com.tubes.me.renttel_u;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
    /* private TextView textViewName;
     private TextView textViewEmail;*/
 
-    private ProgressBar mProgress;
     //inisialisasi button
+
+    private ProgressDialog mProgressDialog;
+
     private SignInButton signInButton;
 
     private static final int RC_SIGN_IN = 1;
@@ -132,13 +134,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
         mAuth.addAuthStateListener(mAuthListener);
     }
 
@@ -206,6 +206,21 @@ public class MainActivity extends AppCompatActivity {
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
+    }
 
+    private void showProgressDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setMessage(getString(R.string.loadingg));
+            mProgressDialog.setIndeterminate(true);
+        }
+
+        mProgressDialog.show();
+    }
+
+    private void hideProgressDialog() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.hide();
+        }
     }
 }
