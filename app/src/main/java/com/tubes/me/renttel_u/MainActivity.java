@@ -1,12 +1,16 @@
 package com.tubes.me.renttel_u;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -223,4 +227,6 @@ public class MainActivity extends AppCompatActivity {
             mProgressDialog.hide();
         }
     }
+
+
 }

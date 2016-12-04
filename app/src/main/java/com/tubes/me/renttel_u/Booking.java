@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Booking extends AppCompatActivity {
 
@@ -16,16 +17,15 @@ public class Booking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tugas1);
 
-        /*mBooking = (Button) findViewById(R.id.bookingbtn);
-        mBooking.setOnClickListener(new OnClickListener() {
+        mBooking = (Button) findViewById(R.id.bookingbtn);
+        mBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Menunggu konfirmasi", Toast
                         .LENGTH_SHORT).show();
             }
-        });*/
+        });
     }
-
     public void LihatMaps (View v){
         startActivity(new Intent(Booking.this, MapsActivity.class));
     }

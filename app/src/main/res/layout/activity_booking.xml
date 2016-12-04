@@ -91,14 +91,7 @@
     <TextView
         android:id="@+id/editfasilitas"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="150dp" />-->
 
-    <Button
-        android:layout_marginTop="120dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BOOKING"
-        android:id="@+id/bookingbtn"
-        android:onClick="booking"/>-->
 
 </LinearLayout>

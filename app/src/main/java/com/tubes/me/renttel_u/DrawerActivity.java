@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.tubes.me.renttel_u.R.menu.drawer;
+
 public class DrawerActivity extends AppCompatActivity implements NavigationView
         .OnNavigationItemSelectedListener {
 
@@ -68,15 +70,15 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         mListnyaList = new ArrayList<>();
 
         mListnyaList.add(new Listnya(1, "Honda Beat", "Abi Rental", 50000));
-        mListnyaList.add(new Listnya(2, "Honda Vario", "Roda 99 Rental", 50000));
+        mListnyaList.add(new Listnya(2, "Honda Vario", "Roda 99 Rental", 55000));
         mListnyaList.add(new Listnya(3, "Yamaha Mio", "Abi Rental", 50000));
-        mListnyaList.add(new Listnya(4, "Yamaha Xride", "Roda 99 Rental", 50000));
-        mListnyaList.add(new Listnya(5, "Honda Vario 125", "Apri Rental", 50000));
-        mListnyaList.add(new Listnya(6, "Honda CBR", "Cia Rental", 50000));
+        mListnyaList.add(new Listnya(4, "Yamaha Xride", "Roda 99 Rental", 55000));
+        mListnyaList.add(new Listnya(5, "Honda Vario 125", "Apri Rental", 55000));
+        mListnyaList.add(new Listnya(6, "Honda CBR", "Cia Rental", 70000));
         mListnyaList.add(new Listnya(7, "Yamaha Mio Vino", "Aris rental", 50000));
         mListnyaList.add(new Listnya(8, "Suzuki Spin", "Rio Rental", 50000));
-        mListnyaList.add(new Listnya(9, "Yamaha Jupiter MX", "Roda 99 Rental", 50000));
-        mListnyaList.add(new Listnya(10, "Suzuki Satria FU", "Roda 99 Rental", 50000));
+        mListnyaList.add(new Listnya(9, "Yamaha Jupiter MX", "Roda 99 Rental", 60000));
+        mListnyaList.add(new Listnya(10, "Suzuki Satria FU", "Roda 99 Rental", 60000));
 
 
         adapter = new com.tubes.me.renttel_u.ListAdapter(getApplicationContext(), mListnyaList);
@@ -104,7 +106,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer, menu);
+        getMenuInflater().inflate(drawer, menu);
         return true;
     }
 
@@ -129,7 +131,13 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_about){
+            startActivity(new Intent(DrawerActivity.this, aboutku.class));
+        }else if(id == R.id.nav_logout){
+            startActivity(new Intent(DrawerActivity.this, AccountActivity.class));
+        }
+
+        /*if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -140,20 +148,9 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_logout) {
-            /*mAuth = FirebaseAuth.getInstance();
-            mAuthListener = new FirebaseAuth.AuthStateListener() {
-                @Override
-                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
-                    if (firebaseAuth.getCurrentUser() == null){
-
-                        startActivity(new Intent(DrawerActivity.this, MainActivity.class));
-                    }
-                }
-            };
-            mAuth.signOut();*/
             startActivity(new Intent(DrawerActivity.this, AccountActivity.class));
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
