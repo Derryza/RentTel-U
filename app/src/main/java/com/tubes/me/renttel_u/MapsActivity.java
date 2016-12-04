@@ -25,6 +25,7 @@ public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback {
 
     private GoogleMap mMap;
+    //Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_directions_bike_black_24dp);
 
     //mengambil lokasi terkhir
     private GoogleApiClient mGoogleApliClient;
@@ -108,6 +109,7 @@ public class MapsActivity extends AppCompatActivity implements
             mMap.addMarker(new MarkerOptions()
                     .position(sydney)
                     .title("Rental Motor"));
+
             //.icon
             mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
             //zoom maps
